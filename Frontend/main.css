@@ -1,0 +1,61 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #searchForm {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #searchInput {
+            padding: 10px;
+            width: 60%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+
+            margin-right: 10px;
+        }
+
+        #searchResults {
+            background-color: yellow;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+
+
+                .movie {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                }
+
+                .movie img {
+                    width: 250px;
+                    height: 250px;
+                    margin-right: 20px;
+                }
+
+                .movie-details {
+                    flex: 1;
+                    justify-content: center;
+                }
+
+                .movie-details p {
+                    margin: 5px 0;
+                }

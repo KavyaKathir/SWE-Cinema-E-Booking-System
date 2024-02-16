@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Search Movies</title>
+</head>
+<body>
+<h1>Search Movies</h1>
+<form id="searchForm" onsubmit="searchMovie(); return false;">
+    <input type="text" id="searchInput" placeholder="Enter movie title...">
+    <button type="submit">Search</button>
+</form>
+<div id="searchResults"></div>
+
+<script>
+    const movies = [
+        { title: 'Her', year: 2024, director: 'James Tyler', imageUrl: './img/1.jpeg' },
+        { title: '1970', year: 2020, director: 'Nathan Landy', imageUrl: './img/2.jpeg' },
+        // Add more movie objects as needed
+    ];
+function searchMovie() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const searchResultsContainer = document.getElementById('searchResults');
+            searchResultsContainer.innerHTML = ''; // Clear previous results
+
+            const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(query));
+
+            if (filteredMovies.length > 0) {
+                filteredMovies.forEach(movie => {
+                    const movieElement = document.createElement('div');
+                    movieElement.classList.add('movie');
+                    movieElement.innerHTML = `
+                        <img src="${movie.imageUrl}" alt="${movie.title}">
+                        <div class="movie-details">
+                            <p><strong>Title:</strong> ${movie.title}</p>
+                            <p><strong>Year:</strong> ${movie.year}</p>
+                            <p><strong>Director:</strong> ${movie.director}</p>
+                        </div>
+                    `;
+                    searchResultsContainer.appendChild(movieElement);
+                });
+            } else {
+                searchResultsContainer.textContent = 'No movies found.';
+            }
+        }
+</script>
+</body>
+</html>
