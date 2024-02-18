@@ -7,17 +7,21 @@
     <title>Search Movies</title>
 </head>
 <body>
-<h1>Search Movies</h1>
-<form id="searchForm" onsubmit="searchMovie(); return false;">
-    <input type="text" id="searchInput" placeholder="Enter movie title...">
-    <button type="submit">Search</button>
-</form>
-<div id="searchResults"></div>
 
+    <h1>Search Movies</h1>
+    <form id="searchForm" onsubmit="searchMovie(); return false;">
+        <input type="text" id="searchInput" placeholder="Enter movie title...">
+        <button type="submit">Search</button>
+    </form>
+    <div class="container">
+    <div id="searchResults"></div>
+    <button class="end-btn">See Details</button>
+
+</div>
 <script>
     const movies = [
-        { title: 'Her', year: 2024, director: 'James Tyler', imageUrl: './img/1.jpeg' },
-        { title: '1970', year: 2020, director: 'Nathan Landy', imageUrl: './img/2.jpeg' },
+        { title: 'Anyone But You', year: 2023, director: 'Will Gluck' , imageUrl: './img/1.jpeg' },
+        { title: 'Madame Web', year: 2024, director: 'S.J. Clarkson', imageUrl: './img/2.jpeg' },
         // Add more movie objects as needed
     ];
 function searchMovie() {
@@ -37,14 +41,18 @@ function searchMovie() {
                             <p><strong>Title:</strong> ${movie.title}</p>
                             <p><strong>Year:</strong> ${movie.year}</p>
                             <p><strong>Director:</strong> ${movie.director}</p>
+
+
                         </div>
                     `;
                     searchResultsContainer.appendChild(movieElement);
                 });
+
             } else {
                 searchResultsContainer.textContent = 'No movies found.';
             }
         }
+
 </script>
 </body>
 </html>

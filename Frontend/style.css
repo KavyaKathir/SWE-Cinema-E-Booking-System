@@ -1,35 +1,19 @@
 * {
     margin: 20;
+
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    backdrop-filter: blur(20px);
+       background-color: #000;
+       }
 
-}
-.body-overlay{
-backdrop-filter:blur(20px);
-}
-/* Apply blur effect to the overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999999; /* Ensure the overlay is on top of other content */
-    backdrop-filter: blur(20px); /* Apply blur effect to the overlay */
-    display: none; /* Initially hide the overlay */
-}
-
-
-
-/* Other styles remain unchanged */
-
+       
 .navbar {
     width: 100%;
     height: 50px;
     background-color: black;
+    margin-bottom:0px;
 }
 
 .navbar-container {
@@ -39,6 +23,29 @@ backdrop-filter:blur(20px);
     height: 100%;
     color: white;
     font-family: 'Sen', sans-serif;
+}
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 50px;
+  margin-right: 50px;
+  font-size: 27px;
+  color:red;
+
+}
+.submit{
+color:red;}
+.movie-card-container {
+  display: flex; /* Use flexbox layout */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.movie-card {
+  flex: 0 0 auto; /* Flex items won't grow or shrink, maintaining their original size */
+  margin-right: 10px; /* Add some space between cards */
 }
 
 .logo-container {
@@ -59,20 +66,7 @@ backdrop-filter:blur(20px);
 .menu-container {
     flex: 6;
 }
-input[type=text] {
-  width: 130px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
+
 
 input[type=text]:focus {
   width: 100%;
@@ -148,6 +142,57 @@ input[type=text]:focus {
     margin-left: 6px;
 }
 
+/* Set the dimensions of the carousel */
+/* Ensure relative positioning for the carousel container */
+#MyCarousel{
+width:500px;
+}
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: flex;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    margin-right: 10px;
+    display:inline-block;
+}
+.carousel-item active{
+    flex: 0 0 400px;
+    margin-right: 10px;
+    display:inline-block;
+}
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%),-50%;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.carousel-prev {
+    left: 100px;
+}
+
+.carousel-next {
+    right: 100px;
+}
+
+
 .menu-list {
     display: flex;
     list-style: none;
@@ -193,6 +238,18 @@ input[type=text]:focus {
     border-radius: 50px;
     cursor: pointer;
     transition: 1s ease all;
+}
+.flex-box {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-box #myCarousel{
+  flex: 1 1 100%
+}
+
+.flex-box #desc {
+  flex: 1 1 50%;
 }
 .light-background {
     background-color: #f5f5f5; /* Light background color */
@@ -261,8 +318,8 @@ margin-button:15px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80vw;
+    transform: translate(-51%, -51%);
+    width: 100vw;
     height: 60vh;
     max-width: 90%;
     overflow: hidden;
@@ -457,24 +514,26 @@ cursor:pointer;
     margin-right: 5px;
 }
 
+.movie-list-title-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.movie-list-title {
+    margin-right: 10px; /* Add some spacing between title and icon */
+}
+.movie-list-header {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.movie-list-title {
+    margin-right: 10px; /* Adjust as needed */
+}
 
 .arrow {
-    font-size: 40px;
-    position: absolute;
-    top: 115px;
-    right: 0;
-    color: bold pink;
-    opacity: 0.5;
-    cursor: pointer;
-    transition: 0.25s ease-in-out all;
-}
-
-.arrow:hover {
-    color: #fff;
-    opacity: 1;
-}
-.arrow.active:hover {
-    color: black;
+   color: red;
+    display:inline-block;/* Add any necessary styles for the chevron icon */
 }
 .container.active {
     background-color: #fff;
@@ -483,7 +542,9 @@ cursor:pointer;
 .movie-list-title.active {
     color: #000000;
 }
-
+.arrow.active:hover {
+    color: black;
+}
 .navbar-container.active {
     background-color: #d3d3d3;
     color: #000000;
@@ -721,3 +782,9 @@ cursor:pointer;
     font-size: 24px;
     cursor: pointer;
 }
+ .copyright {
+        background-color: black; /* Set the background color */
+        color: white; /* Set the text color */
+        text-align: center;
+        padding: 10px 0; /* Add padding to the top and bottom */
+    }

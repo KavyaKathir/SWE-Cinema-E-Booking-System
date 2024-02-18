@@ -1,0 +1,123 @@
+body{background-color:black;}/* Add your CSS styling here */
+/* Style the headings */
+.navbar {
+    background-color: #8B008B;
+    color: white;
+    padding: 25px 25px;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+     font-size: 30px;
+     color: pink;
+}
+
+.nav-buttons button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+     font-size: 25px;
+}
+
+.nav-buttons button:hover {
+    background-color: red;
+}
+
+
+
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.date-button {
+    background-color: #ccc;
+    color: blue;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size:25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.date-button:hover {
+    background-color: #999;
+}
+
+
+.screens{
+    margin: 5px;
+    color: #fff; /* Text color */
+    font-size: 41px; /* Font size */
+color: orange;
+    text-align: center;
+    display: flex; /* Use flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center;
+}
+
+
+
+ .time-btn {
+     display: flex;
+     justify-content: center; /* Horizontally center */
+     align-items: center; /* Vertically center */
+     margin-top: 20px; /* Adjust as needed */
+ }
+
+ .screen-time {
+     background-color: white;
+     border: none;
+     color: brown;
+     padding: 10px 22px;
+     border: 1px solid var(--theme-screen-time-border);
+     text-align: center;
+     text-decoration: none;
+     font-size: 25px;
+     border-radius: 5px;
+     margin-right: 20px;
+ }
+
+
+
+ .screen-time:hover {
+   background-color: #df0e62;
+   color: white;
+ }
+
+ .flickity-viewport {
+   background-color: var(--theme-bg);
+ }
+
+ /* .screen-time{
+   background-color: rgb(243, 235, 235);
+   border: 1px;
+ } */
+ /* .carousel-cell.active{
+   background: #ED2;
+ } */
+ /* .fill-div {
+   display: block;
+   width: 100px;
+   height: 100px;
+   margin-right: 10px;
+   color: #8C8;
+   border-radius: 5px;
+ }
+ .fill-div:active {
+   color:#ED2;
+ } */

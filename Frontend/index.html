@@ -11,9 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700;800&family=Sen:wght@700&display=swap" rel="stylesheet">
     <title>Cinehere</title>
     <script src="https://kit.fontawesome.com/dc49a974a4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-
+<div class="background-animation"></div>
 
 <div class="navbar">
     <div class="navbar-container">
@@ -21,7 +25,7 @@
 
         <div>
             <a href="./search.html" class="my-btn" >
-                <i class="fa fa-search"></i> Search Movies
+                <i class="fa fa-search"></i> Search Movie by Title
             </a>
         </div>
 
@@ -46,13 +50,60 @@
 
     </div>
 </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="flex-box">
+            <div id="myCarousel" class="carousel slide" >
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <iframe width="100%" height="345" src="https://www.youtube.com/embed/qQlr9-rF32A">
+                        </iframe>
+                    </div>
+
+                    <div class="item">
+                        <iframe width="100%" height="345" src="https://www.youtube.com/embed/gYA5WOFhd-Y">
+                        </iframe>
+                    </div>
+
+                    <div class="item">
+                        <iframe width="100%" height="345" src="https://www.youtube.com/embed/ss2KvK-w6w8">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
 
 
         <div class="movie-list-container">
-            <h1 class="movie-list-title">Now Playing</h1>
-            <i class="fa-solid fa-chevron-right arrow"></i>
+            <div class="movie-list-header">
+                <h1 class="movie-list-title">Now Playing</h1>
+                <i class="arrow fa-solid fa-chevron-right"></i>
+            </div>
 
-                <div class="movie-list">
+
+            <div class="movie-list">
                     <div class="movie-list-item">
 
                             <img src="img/1.jpeg" alt="" class="movie-list-item-img">
@@ -378,7 +429,7 @@
                         <button class="interest-button">&#9825; Rating - */5 Interested to watch?</button>
                         <div class="button-container">
 
-                            <button class="featured-button" onclick="">Book Tickets</button>
+                            <button class="featured-button" onclick="">Pre Book Tickets</button>
                             <button class="play-button" onclick="toggleTrailer(this)">
                                 <i class="fa fa-play"></i> Watch Trailer
                             </button>
@@ -528,6 +579,8 @@
                             </div>
                         </div>
                     </div>
+                    </div>
+            </div>
                     <script>
                         // Function to toggle the trailer visibility
                         function toggleTrailer(button) {
@@ -551,6 +604,42 @@
         </footer>
     </div>
     <script src="index.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.owl-one').owlCarousel({
+            stagePadding: 280,
+            loop: true,
+            margin: 20,
+            nav: true,
+            responsiveClass: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    stagePadding: 40,
+                    nav: false
+                },
+                480: {
+                    items: 1,
+                    stagePadding: 60,
+                    nav: true
+                },
+                667: {
+                    items: 1,
+                    stagePadding: 80,
+                    nav: true
+                },
+                1000: {
+                    items: 1,
+                    nav: true
+                }
+            }
+        })
+    })
+</script>
 <script>
 
 
