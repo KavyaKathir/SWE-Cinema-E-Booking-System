@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+       body {
+            /* Background animation */
+            background-image: url('/img/profile3.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            animation: animateBackground 20s linear infinite;
+            color: white;
+        }
+
+        @keyframes animateBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .navbar {
+            width: 75%;
+            margin: 0 auto;
+            color: red;
+        }
+        h1{background-color:red;}
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+        }
+
+        .middle-content {
+            margin-top: 50px;
+        }
+
+        .middle-content input[type="button"] {
+            margin: 10px;
+        }
+.middle-content:last-child {
+            color:red;
+        }
+        .container {
+            width: 800px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 10px;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+
+        .bottom-content {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .bottom-content input[type="text"] {
+            margin: 5px;
+        }
+
+        .bottom-content input[type="submit"],
+        .bottom-content input[type="button"] {
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+
+        select {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="color:yellow;">
+    <a class="navbar-brand">MOVIELANE</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" style = "margin-left: 35px"> MANAGE USERS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">MANAGE MOVIES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">MANAGE PROMOTIONS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">MANAGE PRICES</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">LOGOUT</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="bottom-content">
+        <h1>Manage Prices</h1>
+        <form class = "movieForm" method="post" >
+            <table>
+                <tr>
+
+                    <div id="error" class="alert" style="margin: auto; font-size: 1.5rem; color: white; background: indianred; border-radius: 30px; text-align: center; width: fit-content; ">
+                        Price failed to update ...!
+                    </div>
+                    <div id="added" class="alert" style="margin: auto; font-size: 1.5rem; color: white; background: blue; border-radius: 30px; text-align: center; width: fit-content; ">
+                        Prices updated successfully.....!
+                    </div>
+
+                    <br>
+                    <select>
+                        <option>AnyOne but You</option>
+                        <option>Madame Web</option>
+                        <option>Argylle</option>
+                    </select>
+                    <br>
+                    <div class="container my-container">
+                        <form method="post" class = "movieForm">
+                            <table>
+                                <tr>
+                                    <td><label class ="formLabel" for="code">Enter ticket price for Child:</label></td>
+                                    <td><input type="text" required id="code" placeholder= "Price in $" name="code" value=""></td>
+                                </tr>
+                                <tr>
+                                    <td><label class ="formLabel" for="code">Enter ticket price for adult:</label></td>
+                                    <td><input type="text" required id="code" placeholder= "Price in $" name="code" value=""></td>
+                                </tr>
+                                <tr>
+                                    <td><label class ="formLabel" for="code">Enter ticket price for senior:</label></td>
+                                    <td><input type="text" required id="code" placeholder= "Price in $" name="code" value=""></td>
+                                </tr>
+                                <tr>
+                                    <td><label class ="formLabel" for="code">Enter Sales Tax:</label></td>
+                                    <td><input type="text" required id="code" placeholder= "Price in $" name="code" value=""></td>
+                                </tr>
+                                <tr>
+                                    <td><label class ="formLabel" for="discount">Additional online booking fees:</label></td>
+                                    <td><input type="number" required id="discount" placeholder= "$" name="discount"></td>
+                                </tr>
+
+                            </table>
+                        </form>
+                    </div>
+
+            </table>
+            <div class="container my-container btn">
+
+
+                <input type="submit" class="btn btn-success" value="Save">
+                <input type="button" class="btn btn-danger" value="Cancel">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+</html>

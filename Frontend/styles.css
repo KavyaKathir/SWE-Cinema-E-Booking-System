@@ -1,5 +1,4 @@
-body{background-color:black;}/* Add your CSS styling here */
-/* Style the headings */
+body{background-color:black;}
 .navbar {
     background-color: #8B008B;
     color: white;
@@ -61,12 +60,11 @@ body{background-color:black;}/* Add your CSS styling here */
 
 .screens{
     margin: 5px;
-    color: #fff; /* Text color */
-    font-size: 41px; /* Font size */
+    color: #fff;
 color: orange;
     text-align: center;
-    display: flex; /* Use flexbox */
-        justify-content: center; /* Center horizontally */
+    display: flex;
+        justify-content: center;
         align-items: center;
 }
 
@@ -74,9 +72,9 @@ color: orange;
 
  .time-btn {
      display: flex;
-     justify-content: center; /* Horizontally center */
-     align-items: center; /* Vertically center */
-     margin-top: 20px; /* Adjust as needed */
+     justify-content: center;
+     align-items: center;
+     margin-top: 20px;
  }
 
  .screen-time {
@@ -102,22 +100,17 @@ color: orange;
  .flickity-viewport {
    background-color: var(--theme-bg);
  }
+.new-button {
+    position: fixed;
+     color: green;
+    bottom: 40px;
+    right: 20px;
+    width: 150px;
+        height: 40px;
+        font-size:20px;
 
- /* .screen-time{
-   background-color: rgb(243, 235, 235);
-   border: 1px;
- } */
- /* .carousel-cell.active{
-   background: #ED2;
- } */
- /* .fill-div {
-   display: block;
-   width: 100px;
-   height: 100px;
-   margin-right: 10px;
-   color: #8C8;
-   border-radius: 5px;
+}
+.new-button:hover {
+   background-color: blue;
+   color: red;
  }
- .fill-div:active {
-   color:#ED2;
- } */

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="seat-style.css" />
+    <title>MOVIELANE</title>
+    <style>
+        .navbar {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           background-color: #8B008B;
+           color: white;
+           padding: 25px 25px;
+       }
+
+       .navbar-container {
+           display: flex;
+           justify-content: space-between;
+       }
+
+       .logo {
+           margin: 0;
+           font-size: 30px;
+           color: pink;
+       }
+
+       .nav-buttons button {
+           background-color: transparent;
+           color: white;
+           border: none;
+           padding: 5px 10px;
+           cursor: pointer;
+           font-size: 25px;
+       }
+
+       .nav-buttons button:hover {
+           background-color: red;
+       }
+        .proceed-button {
+           background-color: transparent;
+           color: red;
+           border: none;
+           padding: 5px 10px;
+           cursor: pointer;
+           font-size: 25px;
+       }
+        .proceed-button:hover {
+           background-color: white;
+       }
+        </style>
+</head>
+<body>
+<nav>
+<div class="navbar">
+    <div class="navbar-container">
+        <div class="logo-container"><h1 class="logo">MOVIELANE </h1></div>
+        <div class="nav-buttons">
+            <button id="loginBtn">LOGIN</button>
+            <button id="registerBtn">REGISTER</button>
+        </div>
+    </div>
+</div>
+</nav>
+<div class="movie-container">
+    <label> Select a movie:</label>
+    <select id="movie">
+        <option value="20">Anyone But You</option>
+        <option value="230">Madame Web</option>
+        <option value="250">Lisa Frankenstein</option>
+        <option value="290">Argylle</option>
+    </select>
+</div>
+
+<ul class="showcase">
+    <li>
+        <div class="seat"></div>
+        <small>Available</small>
+    </li>
+    <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+    </li>
+    <li>
+        <div class="seat sold"></div>
+        <small>Sold</small>
+    </li>
+</ul>
+<div class="container">
+    <div class="screen"></div>
+
+
+
+    <div class="row">
+        <div class="seat" data-value="A1"></div>
+        <div class="seat" data-value="A2"></div>
+        <div class="seat" data-value="A3"></div>
+        <div class="seat" data-value="A4"></div>
+        <div class="seat" data-value="A5"></div>
+        <div class="seat" data-value="A6"></div>
+        <div class="seat" data-value="A7"></div>
+        <div class="seat" data-value="A8"></div>
+    </div>
+
+    <div class="row">
+        <div class="seat" data-value="B1"></div>
+        <div class="seat" data-value="B2"></div>
+        <div class="seat" data-value="B3"></div>
+        <div class="seat sold" data-value="B4"></div>
+        <div class="seat sold" data-value="B5"></div>
+        <div class="seat" data-value="B6"></div>
+        <div class="seat" data-value="B7"></div>
+        <div class="seat" data-value="B8"></div>
+    </div>
+    <div class="row">
+        <div class="seat" data-value="C1"></div>
+        <div class="seat" data-value="C2"></div>
+        <div class="seat" data-value="C3"></div>
+        <div class="seat sold" data-value="C4"></div>
+        <div class="seat sold" data-value="C5"></div>
+        <div class="seat" data-value="C6"></div>
+        <div class="seat" data-value="C7"></div>
+        <div class="seat" data-value="C8"></div>
+    </div>
+    <div class="row">
+        <div class="seat" data-value="D1"></div>
+        <div class="seat sold" data-value="D2"></div>
+        <div class="seat" data-value="D3"></div>
+        <div class="seat" data-value="D4"></div>
+        <div class="seat" data-value="D5"></div>
+        <div class="seat" data-value="D6"></div>
+        <div class="seat" data-value="D7"></div>
+        <div class="seat sold" data-value="D8"></div>
+    </div>
+    <div class="row">
+        <div class="seat sold" data-value="E1"></div>
+        <div class="seat" data-value="E2"></div>
+        <div class="seat" data-value="E3"></div>
+        <div class="seat" data-value="E4"></div>
+        <div class="seat" data-value="E5"></div>
+        <div class="seat" data-value="E6"></div>
+        <div class="seat sold" data-value="E7"></div>
+        <div class="seat" data-value="E8"></div>
+    </div>
+
+</div>
+<p>you should select 5 seats.</p><br>
+<p class="text">
+    You have selected <span id="count">0</span> seat(s). Selected Seats: <span id="selected-seats"></span>
+
+</p>
+
+<button class="proceed-button" id="proceedBtn">Proceed to Order</button>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.container');
+    const seats = document.querySelectorAll('.row .seat:not(.sold)');
+    const count = document.getElementById('count');
+    const selectedSeatsDisplay = document.getElementById('selected-seats');
+
+    function updateSelectedCount() {
+        const selectedSeats = document.querySelectorAll('.row .seat.selected');
+        count.innerText = selectedSeats.length;
+
+        const selectedSeatValues = Array.from(selectedSeats).map(seat => seat.dataset.value);
+        selectedSeatsDisplay.innerText = selectedSeatValues.join(', ');
+    }
+
+    container.addEventListener('click', e => {
+        if (e.target.classList.contains('seat') && !e.target.classList.contains('sold')) {
+            e.target.classList.toggle('selected');
+            updateSelectedCount();
+        }
+    });
+
+    const selectedSeatsCount = sessionStorage.getItem('selectedSeats');
+    if (selectedSeatsCount && selectedSeatsCount > 0) {
+        count.innerText = selectedSeatsCount;
+        updateSelectedCount();
+    }
+});
+
+
+</script>
+</body>
+</html>

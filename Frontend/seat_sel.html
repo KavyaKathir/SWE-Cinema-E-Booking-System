@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Reservation</title>
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+          overflow: hidden;
+          background: linear-gradient(45deg, #ffcc00, #ff6600, #ff3300, #ff6600, #ffcc00);
+          background-size: 400% 400%;
+          animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar p {
+            margin: 0;
+        }
+
+        .navbar-links {
+            display: flex;
+        }
+
+        .navbar-links a {
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-links a:last-child {
+            margin-right: 0;
+        }
+
+        .ticket-form {
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 5px;
+          padding: 20px;
+          margin: 20px auto;
+          max-width: 400px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticket-price {
+          text-align: center;
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+
+        .session-expire {
+          text-align: center;
+          color: #fff;
+          font-size: 14px;
+          margin-top: 20px;
+        }
+
+        .nav-buttons button:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>MOVIELANE</h1>
+    <div class="navbar-right">
+        <form id="searchForm" onsubmit="searchMovie(); return false;">
+            <input type="text" id="searchInput" placeholder="Enter movie title...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="navbar-links">
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+        </div>
+    </div>
+</div>
+
+<div id="remaining-seats">
+    <p class="session-expire">Seats Remaining: <span id="seats-remaining">261</span></p>
+</div>
+<div id="reducing-seats">
+    <p class="number of seats">Seats Selected: <span id="seats-reducing"></span></p>
+</div>
+
+<div class="ticket-form">
+    <div class="ticket-price">
+        <p>Child Ticket Price: $10</p>
+    </div>
+    <label for="age-category-child">Number of Tickets - Child:</label>
+    <input type="number" id="num-tickets-child" min="0" value="0"><br>
+
+    <div class="ticket-price">
+        <p>Adult Ticket Price: $20</p>
+    </div>
+    <label for="age-category-adult">Number of Tickets - Adult:</label>
+    <input type="number" id="num-tickets-adult" min="0" value="0"><br>
+
+    <div class="ticket-price">
+        <p>Senior Ticket Price: $15</p>
+    </div>
+    <label for="age-category-senior">Number of Tickets - Senior:</label>
+    <input type="number" id="num-tickets-senior" min="0" value="0"><br>
+</div>
+
+<!-- Session expires message -->
+<div class="session-expire">
+    <p>Your session will expire in 10 minutes.</p>
+</div>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+      updateRemainingSeats();
+    });
+
+
+    function updateRemainingSeats() {
+      var totalSeats = 261; // Total number of seats
+      var numTicketsChild = parseInt(document.getElementById("num-tickets-child").value);
+      var numTicketsAdult = parseInt(document.getElementById("num-tickets-adult").value);
+      var numTicketsSenior = parseInt(document.getElementById("num-tickets-senior").value);
+      var totalTickets = numTicketsChild+ numTicketsAdult + numTicketsSenior;
+      var seatsRemaining = totalSeats - totalTickets;
+      var seatsSelected=totalTickets;
+
+      document.getElementById("seats-remaining").textContent = seatsRemaining;
+      document.getElementById("seats-reducing").textContent = seatsSelected;
+
+      sessionStorage.setItem('selectedSeats', seatsReducing);    }
+
+    document.getElementById("num-tickets-child").addEventListener("input", function() {
+      updateRemainingSeats();
+    });
+
+    document.getElementById("num-tickets-adult").addEventListener("input", function() {
+      updateRemainingSeats();
+    });
+
+    document.getElementById("num-tickets-senior").addEventListener("input", function() {
+      updateRemainingSeats();
+    });
+</script>
+
+</body>
+</html>

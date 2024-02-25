@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>B8-CINEMA</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a  class="navbar-brand" style="background-color:pink">MOVIELANE</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" style = "margin-left: 35px"> MANAGE USERS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">MANAGE MOVIES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">MANAGE PROMOTIONS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">MANAGE PRICES</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <!--                    <a href="#" class="nav-link">ADMIN ACCOUNT</a>-->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">LOGOUT</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="error" class="alert" style="margin: auto; font-size: 1.5rem; color: white; background: indianred; border-radius: 30px; text-align: center; width: fit-content; ">
+    Failed to save - Member already exists .....!
+</div>
+<div id="added" class="alert" style="margin: auto; font-size: 1.5rem; color: white; background: blue; border-radius: 30px; text-align: center; width: fit-content; ">
+    Added member successfully.....!
+</div>
+<div id="edited" class="alert" style="margin: auto; font-size: 1.5rem; color: white; background: pink; border-radius: 30px; text-align: center; width: fit-content; ">
+    Edited member successfully.....!
+</div>
+<div id="sent" class="alert" style="margin: auto; font-size: 1.5rem; color: white; background: blue; border-radius: 30px; text-align: center; width: fit-content; ">
+    Deleted member successfully.....!
+</div>
+<div id="deleted" class="alert" style="margin: auto; font-size: 1.5rem; color: white; background: green; border-radius: 30px; text-align: center; width: fit-content; ">
+    Suspended member successfully.....!
+</div>
+<div class="container-fluid my-container">
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <button id="add" class="btn btn-danger" style="margin-top: 40px; margin-right: 10px;">ADD ADMINS</button>
+            <button id="update" class="btn btn-danger" style="margin-top: 40px; margin-right: 10px;">UPDATE ADMINS</button>
+            <button id="delete" class="btn btn-danger" style="margin-top: 40px; margin-right: 10px;">DELETE ADMINS</button>
+            <button id="add" class="btn btn-danger" style="margin-top: 40px; margin-right: 10px;">ADD USERS</button>
+            <button id="update" class="btn btn-danger" style="margin-top: 40px; margin-right: 10px;">UPDATE USERS</button>
+            <button id="delete" class="btn btn-danger" style="margin-top: 40px; margin-right: 10px;">DELETE USERS</button>
+            <button id="suspend" class="btn btn-danger" style="margin-top: 40px;">SUSPEND MEMBER</button>
+        </div>
+    </div>
+</div>
+
+
+<form class="col-lg-8 off offset-lg-1 styles" method="post" >
+    <div class="form-row required">
+        <div class="form-group required col-md-6">
+            <label class="form-check-label" for="firstName">First name *</label>
+            <input type="text" required class="form-control" id="firstName" placeholder="FirstName">
+        </div>
+        <div class="form-group required col-md-6">
+            <label class="form-check-label" for="lastName">Last name *</label>
+            <input type="text" required class="form-control" id="lastName" placeholder="LastName">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-check-label" for="email">Email *</label>
+        <input type="text" class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required placeholder="Email">
+    </div>
+    <div class="form-row">
+        <div class="form-group required col-md-6">
+            <label class="form-check-label" for="password">Password *</label>
+            <input type="password" class="form-control" id="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required placeholder="Password">
+        </div>
+        <div class="form-group required col-md-6">
+            <label class="form-check-label" for="inputPasswordConfirm4">Confirm Password *</label>
+            <input type="password" required class="form-control" id="inputPasswordConfirm4"
+                   placeholder="Confirm Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-check-label" for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+
+    </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-primary">Add Admin</button>
+</form>
+
+<div class="container-fluid my-container">
+    <br><hr><br>
+</div>
+
+</body>
+</html>

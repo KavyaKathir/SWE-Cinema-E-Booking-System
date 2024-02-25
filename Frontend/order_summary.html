@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,300;1,900&family=Lilita+One&display=swap" rel="stylesheet">
+    <style>
+
+        .navbar {
+            background-color: blue;
+        }
+        .navbar-brand {
+            font-family: 'fantasy';
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: pink;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        i img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .custom-login-button {
+            background-color: green;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 350px;
+        }
+
+        .custom-login-button:hover {
+            background-color: #FFA653;
+        }
+h1{
+margin-top:20px;
+text-align:center;
+}
+        .orderbox {
+            display: grid;
+            width: 1000px;
+            height: 630px;
+            background-color: green;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            margin-top: 100px;
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+.total-box {
+    background-color: #F4893D;
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 20px;
+    height:18 px;
+}
+        .orderdetails {
+            padding-top: 20px;
+            background-color: white;
+            height: 500px;
+            width: 400px;
+            margin-bottom: 300px;
+            border-radius: 10px;
+        }
+
+        .orderbox p {
+            font-size: 14pt;
+        }
+
+        .paymentmethodsgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.paymentmethod {
+    width: 100%;
+}
+
+.paymentmethod button {
+    width: 100%;
+    height: 50px;
+    background-color: #F4893D;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.paymentmethod button:hover {
+    background-color: #FFA653;
+}
+
+
+        input[type=text] {
+            width: 420px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            margin-bottom:20px;
+            margin-left:20px;
+        }
+
+        .rightbox {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            justify-content: center;
+        }
+
+        .rightbox label {
+            padding: 20px;
+        }
+
+        .continuecancelbuttons{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height:40px;
+            margin-top: 50px;
+            margin-right:40 px;
+        }
+
+        a {
+            text-decoration: black;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+        <a class="navbar-brand active" style="color:white; font-family: 'Lato', sans-serif; font-family: 'Lilita One', cursive;" href="Main.php">
+            <h1>MOVIELANE</h1>
+        </a>
+        <div class="button-class">
+            <button> Login</button>
+        <button> Register</button>
+        </div>
+
+    </div>
+</nav>
+<h1>ORDER SUMMARY</h1>
+<div class="orderbox">
+    <div class="orderdetails">
+        <p style="display:inline-block"><b>Order Details:</b></p>
+        <br>
+        <p>Movie: Madame Web</p>
+        <p>Date/Time: Thursday, February 29 7:00 PM</p>
+
+        <p>Seats: C1 C2 B5</p>
+        <p>adult x 2 - $27.18 <img src="https://icons.veryicon.com/png/o/miscellaneous/jt2/box-plus-1.png" alt="plus button" width="25px"></p>
+        <br>
+        <p>senior x 1 - $12.18 <img src="https://icons.veryicon.com/png/o/miscellaneous/jt2/box-plus-1.png" alt="plus button" width="25px"></p>
+        <br>
+        <p>Subtotal - $39.36</p>
+        <br>
+        <p>Sales Tax - $3.20</p>
+        <br>
+        <p>Additional online fees - $1.20</p>
+        <br>
+        <div class="total-box">
+            <p>Total - $43.76</p>
+        </div>
+
+    </div>
+    <div class="rightbox">
+        <div class="paymentmethodsgrid">
+            <div class="paymentmethod">
+                <button>MasterCard *1234</button>
+            </div>
+            <div class="paymentmethod">
+                <button>Amex *4578</button>
+            </div>
+            <div class="paymentmethod">
+                <button>Visa *8732</button>
+            </div>
+            <div class="paymentmethod">
+                <button>Add Other Payment Method</button>
+            </div>
+        </div>
+        <form>
+            <label for="promo" style="margin-top: 50px; color:black;">Promo Code</label>
+            <input type="text" id="promo" style="margin-right:20px;" name="promo" placeholder="Enter your promotion code here...">
+        </form>
+        <div class="continuecancelbuttons">
+            <button style="background-color: white; width: 150px;height: 40px;border-radius: 5px;"><a href="">Cancel</a></button>
+            <button style="background-color: white; width: 200px; height: 40px; border-radius: 5px;">
+                <a href="Checkout.html" style="display: center; width: 150px; height: 40px; color: black;">
+                    Continue to Checkout
+                </a>
+            </button>
+            </div>
+    </div>
+</div>
+</body>

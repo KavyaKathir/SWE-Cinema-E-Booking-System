@@ -1,5 +1,3 @@
-
-
     document.addEventListener('DOMContentLoaded', function() {
         const track = document.querySelector('.carousel-track');
         const items = document.querySelectorAll('.carousel-item');

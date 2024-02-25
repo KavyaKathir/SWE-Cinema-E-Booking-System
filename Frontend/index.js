@@ -85,7 +85,6 @@ function extractData({ Title, Year, Poster, Type, imdbID }) {
   }
 }
 
-// Utility
 function enterCheck(e) {
   if (e.key === "Enter") {
     getData(e.target.value)
@@ -94,7 +93,6 @@ function enterCheck(e) {
   }
 }
 
-// Reads input field for search term; then calls fetch() for data
 function getSearchReq() {
   if(searchItem.value){
     getData(searchItem.value)
@@ -112,14 +110,14 @@ function changeHero() {
   return
 }
 
-// Clears all data from screen after a search.
+
 function clearValue() {
   searchItem.value = ''
   app.innerHTML = ""
   return
 }
 
-// Builds .createElements faster
+
 function makeElementId(el) {
     return document.createElement(el)
 }

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Confirmation for Nilan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Comfortaa:wght@300&family=Pacifico&display=swap&family=Nunito&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+    background-color: yellow;
+    color: white;
+    padding: 25px 25px;
+    height:25px;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+     font-size: 30px;
+     color: red;
+}
+
+.nav-buttons button {
+    background-color: transparent;
+    justify-content: space-between;
+    color: blue;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+     font-size: 25px;
+}
+
+.nav-buttons button:hover {
+    background-color: orange;
+}
+
+        body {
+            font-family: Nunito;
+            border: 1px solid black;
+            padding: 0em;
+            margin: 0em;
+            height: auto;
+        }
+
+        header{
+            display: block;
+            background-color:black;
+            border: 1px solid black;
+            padding: 0.5em;
+        }
+
+        header h5{
+            text-align: center;
+            color: white;
+            font-size: 100%;
+            font-family: Nunito;
+            padding:0em;
+            margin: 0em;
+        }
+
+        #mainlist{
+            color:black;
+            margin-top: 2em;
+            border: none;
+        }
+
+        #sideicon {
+            margin-top: 2em;
+            border: none;
+            float:right;
+            margin-left:2em;
+        }
+
+        #search {
+            margin-top: 2.7em;
+            float:right;
+            border: 1px solid lightgray;
+            padding: 0.5em;
+        }
+
+        #searchbutton {
+            margin-top: 2.7em;
+            float:right;
+            border: 1px solid lightgray;
+            background-color: lightgray;
+        }
+
+        .menu {
+            height: 65px;
+            padding-left: 5em;
+            padding-right: 5em;
+            position: relative;
+            z-index: 1;
+        }
+
+        #logo {
+            max-width: 60px;
+            padding: 1em;
+            margin-right: 23em;
+            float:left;
+            height:auto;
+        }
+
+        #icon {
+            max-width: 25px;
+        }
+
+        .menu ul{
+            list-style: none;
+            margin:0;
+            padding:0;
+        }
+
+        .menu li{
+            width:120px;
+            margin:0;
+            text-align:center;
+            float: left;
+        }
+
+        .menu a {
+            font-weight: 600;
+            font-size: 100%;
+            color:black;
+            background-color: white;
+            border: 2px solid black;
+            display:block;
+            padding:10px 0px 10px 0px;
+            margin: 0px 0px 0px 0px;
+        }
+
+        .menu a:hover {
+            background-color: #AFAFAF;
+        }
+
+        .one {
+            position:relative;
+        }
+
+        .two {
+            padding:0;
+            margin:0;
+            display: none;
+            position:absolute;
+        }
+
+        .two li {
+            clear:left;
+        }
+
+        .one li:hover .two {
+            display:block;
+        }
+
+        a:link{
+            text-decoration: none;
+        }
+
+        main{
+            height: auto;
+            border: 1px solid black;
+            padding-top:0;
+            padding-bottom: 2em;
+            background-color:black;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 50px;
+        }
+
+        #userdetails {
+            padding: 2em;
+            text-align:center;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            margin: 10px;
+            margin-bottom: 1em;
+        }
+
+        #profilebutton {
+            color: black;
+            background-color: white;
+            font-family: Nunito;
+            border-radius: 50px;
+            padding: 7px;
+            font-size: 1.4em;
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        #history-button {
+            color: black;
+            background-color: white;
+            font-family: Nunito;
+            border-radius: 50px;
+            padding: 7px;
+            font-size: 1.4em;
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+        }
+        #view-history-button {
+            color: black;
+            background-color: white;
+            font-family: Nunito;
+            border-radius: 50px;
+            padding: 7px;
+            font-size: 1.4em;
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+        }
+        #view-history-button.hover {
+        color:red;
+        }
+        p {
+            text-align: center;
+            margin-top:5px;
+        }
+
+        footer{
+            display:block;
+            border: 1px solid black;
+            padding-top:10px;
+            background-color:black;
+        }
+
+        span{
+            color:white;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar-container">
+        <div class="logo-container"><h1 class="logo">MOVIELANE </h1></div>
+        <div class="nav-buttons">
+            <button id="myprofile">NILAN<i class="fas fa-user"></i></button>
+
+        </div>
+    </div>
+</div>
+<!-- Include Font Awesome JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<header>
+    <h5>Ticket Confirmation for Nilan</h5>
+</header>
+<main>
+    <div id="userdetails">
+        <h1>Thank you for booking with us</h1>
+        <h3>Your Booking confirmation number is N5JK-L5AS-R9PF-E4UT</h3>
+        <h3>Booked in Screen: 1</h3>
+        <h3>Movie Title: Madame Web</h3>
+        <h3>Date/Time: Thursday, February 29 7:00 PM</h3>
+        <h3>Seats: C1 C2 B5</h3>
+        <h3>Total Price: $43.76</h3>
+        <h3>A copy of your ticket is sent to secour63@gmail.com</h3>
+        <a id="history-button">Home</a>
+        <a id="view-history-button" >View Ticket History</a>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Your Company</p>
+</footer>
+</body>
+</html>

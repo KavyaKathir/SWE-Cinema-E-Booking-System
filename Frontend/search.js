@@ -6,19 +6,13 @@ async function getMovie() {
         let res = await fetch(url)
 
         let data = await res.json()
-
         appendsearch(data)
-
-        // console.log(data);
-
     }
     catch (err) {
-
         console.log("Movie not found", err);
     }
-
 }
-// getMovie()
+
 
 function appendsearch(d) {
     console.log(d);
@@ -59,17 +53,13 @@ function appendsearch(d) {
 
 
 
-// adding seacrh functionality
-
 function search() {
 
     let movie = document.getElementById("search_movie").value
     if (movie == "") {
         alert("Please enter the movie name")
-        // error()
     }
     else {
-        // console.log(movie);
         url = `https://www.omdbapi.com/?apikey=e3148ffb&t=${movie}`
         getMovie()
     }
