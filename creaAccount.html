@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <nav>
+      <ul class="nav">
+        <li><a href="default.asp">Home</a></li>
+        <li><a href="news.asp">Browse Movies</a></li>
+        <li id="profile"><a href="about.asp">Profile</a></li>
+      </ul>
+    </nav>
+    
+    <form id="creAcc">
+      <h1> Create Account </h1>
+
+      <label for="name"> Name: * </label> 
+      <input type="text" id="name" placeholder="Jane Doe" required> <br/> <br/>
+
+      <label for="creEmail">Email: * </label>
+      <input type="email" id="creEmail" placeholder="JaneDoe@gmail.com" required>
+      <input type="checkbox" id="promotions">Subscribe for Promotions <br/> <br/>
+
+      <label for="createPwd"> Password: *</label>
+
+      <ul>
+        <li><input type="password" id="createPwd" required></li>
+        <li><input type="checkbox" id="pwdView1">Show Password </li>
+        <li><h5>Must contain at least 8 characters</h5></li> 
+      </ul>
+      <input type="checkbox" id="savePwd">Forget Password  <br/> <br/>
+
+      <label for="phone">Phone Number: *</label>
+      <input type="tel" id="phone" placeholder="123-456-7891" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+
+      <label>Shipping Address: </label> <br/> <br/>
+
+      <label class="shipping" for="shipAddress">Address</label>
+      <input type="text" id="shipAddress" placeholder="1234 pinetree lane" />
+
+      <label class="shipping" for="shipCountry">Country</label>
+      <input type="text" id="shipCountry" placeholder="United States" />
+
+      <label class="shipping" for="shipZip">Zip Code</label>
+      <input type="tel" id="shipZip" placeholder="40078" />
+
+      <label class="shipping" for="shipCity">City</label>
+      <input type="text" id="shipCity" placeholder="Athens" />
+
+      <label class="shipping" for="shipState">State</label>
+      <input type="text" id="shipState" placeholder="Georgia" />
+
+
+      <br/> <br/>
+
+      <input type="checkbox" id="card1"> Add Credit/Debit Card     <br/> <br/>
+
+
+
+    </form>
+
+   
+
+    <input type="button" id="submit" value="Create Account">
+
+
+    <div class="signin">
+        <p>Already have an account? <a href="#">Sign in</a></p>
+    </div>
+
+    <script src="creaAccount.js"></script>
+</body>
+</html>
