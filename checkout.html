@@ -31,6 +31,17 @@
 
     </div>
 
+    <br>
+
+    <ul>
+    <label for="promotion">Promotion Code:</label>
+    <input type="text" id="promoCode" placeholder="GoDawgs88">
+    <input type="button" id="promoVerify" value="Verify">
+
+    </ul>
+
+    <br> <br> <br>
+
     <h2>Select Payment</h2>  <br>
 
     <ul id="cards">
@@ -49,9 +60,43 @@
     </div>
 
     <br> <br>
-    
 
-    <input type="button" id="checkoutButton" value="Checkout">
+    <div class="checkoutCard">
+        <h3>Manually Enter Card:</h3>
+    <label>Card Number: </label>
+      <input type="tel" id="cardNum2" maxlength="19" placeholder="1111 2222 3333 4444">
+
+      <label>Expiration Date: </label>
+      <input type="tel" placeholder="01/25" id="exp2">
+
+      <label>CVC: </label>
+      <input type="tel" placeholder="456" id="cvc2">    <br> <br>
+
+      <label>Billing Address: </label> <br/>
+
+      <label class="checkoutCard" for="checkoutAdd2">Address</label>
+      <input type="text" id="checkoutAdd2" placeholder="7020 dishwash drive">
+
+      <label class="checkoutCard" for="checkoutAddCtry2">Country</label>
+      <input type="text" id="checkoutAddCtry2" placeholder="United States">
+
+      <label class="checkoutCard" for="checkoutAddZip2">Zipcode</label>
+      <input type="tel" id="checkoutAddZip2" placeholder="40007">
+
+      <label class="checkoutCard" for="checkoutAddCity2">City</label>
+      <input type="text" id="checkoutAddCity2" placeholder="Dallas">
+
+      <label class="checkoutCard" for="checkouotAddState2">State</label>
+      <input type="text" id="checkoutAddState2" placeholder="Texas">
+    </div>
+
+    
+    <input type="button" id="cancelButton" value="Checkout">
+
+    <br> <br>
+    
+    <input type="button" id="checkoutButton" value="Cancel">
+   
 
     </div>
 
