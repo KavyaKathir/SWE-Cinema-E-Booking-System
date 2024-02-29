@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
@@ -63,14 +63,23 @@
 
     <div class="checkoutCard">
         <h3>Manually Enter Card:</h3>
-    <label>Card Number: </label>
+
+    <ul>
+        <li><input type="radio" value="credit" name="creDeb2" id="credit2">
+                <label for="credit2">credit</label></li>
+        <li><input type="radio" value="debit" name="creDeb2" id="debit2" checked>
+                <label for="debit2">debit</label></li>
+    </ul>
+
+    <br>
+
+      <label>Card Number: </label>
       <input type="tel" id="cardNum2" maxlength="19" placeholder="1111 2222 3333 4444">
 
       <label>Expiration Date: </label>
       <input type="tel" placeholder="01/25" id="exp2">
-
-      <label>CVC: </label>
-      <input type="tel" placeholder="456" id="cvc2">    <br> <br>
+    
+      <br> <br>
 
       <label>Billing Address: </label> <br/>
 
@@ -91,10 +100,12 @@
     </div>
 
     
+
+    
     <input type="button" id="cancelButton" value="Checkout">
 
     <br> <br>
-    
+
     <input type="button" id="checkoutButton" value="Cancel">
    
 
