@@ -52,6 +52,10 @@ ul {
     
 }
 
+.checkoutCard {
+  text-align: left;
+}
+
 .checkout {
     text-align: center;
     width: 60%;
