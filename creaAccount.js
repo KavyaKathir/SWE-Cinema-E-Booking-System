@@ -76,14 +76,6 @@ function toggleCard1() {
       expiration1.placeholder = "MM / YY";
       expiration1.id = 'exp1';
   
-      CVCLabel1 = document.createElement('label');
-      CVCLabel1.textContent = 'CVC: ';
-  
-      CVC1 = document.createElement('input');
-      CVC1.type = 'tel';
-      CVC1.placeholder = "123";
-      CVC1.id = 'cvc1';
-  
       billAddDiv1 = document.createElement('div');
   
       billAddLabel1 = document.createElement('label');
@@ -174,8 +166,6 @@ function toggleCard1() {
       cardHolder1.appendChild(cardNum1);
       cardHolder1.appendChild(expLabel1);
       cardHolder1.appendChild(expiration1);
-      cardHolder1.appendChild(CVCLabel1);
-      cardHolder1.appendChild(CVC1);
       cardHolder1.appendChild(billAddDiv1);
       cardHolder1.appendChild(card2Div);
       form.appendChild(cardHolder1);
@@ -245,14 +235,6 @@ function toggleCard1() {
       expiration2.type = 'tel';
       expiration2.placeholder = "MM / YY";
       expiration2.id = 'exp2';
-  
-      CVCLabel2 = document.createElement('label');
-      CVCLabel2.textContent = 'CVC: ';
-  
-      CVC2 = document.createElement('input');
-      CVC2.type = 'tel';
-      CVC2.placeholder = "123";
-      CVC2.id = 'cvc2';
   
       billAddDiv2 = document.createElement('div');
   
@@ -345,8 +327,6 @@ function toggleCard1() {
       cardHolder2.appendChild(cardNum2);
       cardHolder2.appendChild(expLabel2);
       cardHolder2.appendChild(expiration2);
-      cardHolder2.appendChild(CVCLabel2);
-      cardHolder2.appendChild(CVC2);
       cardHolder2.appendChild(billAddDiv2);
       cardHolder2.appendChild(card3Div);
       form.appendChild(cardHolder2);
@@ -415,14 +395,6 @@ function toggleCard1() {
       expiration3.type = 'tel';
       expiration3.placeholder = "MM / YY";
       expiration3.id = 'exp3';
-  
-      CVCLabel3 = document.createElement('label');
-      CVCLabel3.textContent = 'CVC: ';
-  
-      CVC3 = document.createElement('input');
-      CVC3.type = 'tel';
-      CVC3.placeholder = "123";
-      CVC3.id = 'cvc3';
   
       billAddDiv3 = document.createElement('div');
   
@@ -497,8 +469,6 @@ function toggleCard1() {
       cardHolder3.appendChild(cardNum3);
       cardHolder3.appendChild(expLabel3);
       cardHolder3.appendChild(expiration3);
-      cardHolder3.appendChild(CVCLabel3);
-      cardHolder3.appendChild(CVC3);
       cardHolder3.appendChild(billAddDiv3);
       form.appendChild(cardHolder3);
   
