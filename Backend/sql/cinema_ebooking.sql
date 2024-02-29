@@ -96,8 +96,7 @@ CREATE TABLE payment_information (
 CREATE TABLE shipping_addresses (
     address_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
-    address_line1 VARCHAR(255),
-    address_line2 VARCHAR(255),
+    address_line VARCHAR(255),
     city VARCHAR(100),
     state VARCHAR(100),
     zip_code VARCHAR(20),
