@@ -24,6 +24,7 @@ function toggleCard1() {
     if (card1.checked) {
   
       br = document.createElement('br');
+      br2 = document.createElement('br');
   
       credit1 = document.createElement('input');
       credit1.type = 'radio';
@@ -99,7 +100,7 @@ function toggleCard1() {
       billAddCtry1 = document.createElement('input');
       billAddCtry1.type = 'text';
       billAddCtry1.id = 'billAddCtry1';
-      billAddCtry1.value = 'United States';
+      billAddCtry1.placeholder = 'United States';
   
       billAddZipL1 = document.createElement('label');
       billAddZipL1.textContent = 'Zipcode';
@@ -259,7 +260,7 @@ function toggleCard1() {
       billAddCtry2 = document.createElement('input');
       billAddCtry2.type = 'text';
       billAddCtry2.id = 'billAddCtry2';
-      billAddCtry2.value = 'United States';
+      billAddCtry2.placeholder = 'United States';
   
       billAddZipL2 = document.createElement('label');
       billAddZipL2.textContent = 'Zipcode';
@@ -419,7 +420,7 @@ function toggleCard1() {
       billAddCtry3 = document.createElement('input');
       billAddCtry3.type = 'text';
       billAddCtry3.id = 'billAddCtry3';
-      billAddCtry3.value = 'United States';
+      billAddCtry3.placeholder = 'United States';
   
       billAddZipL3 = document.createElement('label');
       billAddZipL3.textContent = 'Zipcode';
@@ -480,12 +481,3 @@ function toggleCard1() {
   
   card1.addEventListener('change', toggleCard1);
 
-
-  /*  Login  */
-
-
-  
-
-
-
-  
