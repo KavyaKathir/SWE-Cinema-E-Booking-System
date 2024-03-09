@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Ticket Reservation</title>
+    <title>Select ticket</title>
     <style>
         body {
           margin: 0;
@@ -31,7 +31,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px;
+            padding: -5px;
             background-color: #333;
             color: white;
         }
@@ -101,7 +101,7 @@
     <p class="session-expire">Seats Remaining: <span id="seats-remaining">261</span></p>
 </div>
 <div id="reducing-seats">
-    <p class="number of seats">Seats Selected: <span id="seats-reducing"></span></p>
+    <p class="number of seats" style="color:red;" ><span id="seats-reducing"></span></p>
 </div>
 
 <div class="ticket-form">
@@ -124,7 +124,7 @@
     <input type="number" id="num-tickets-senior" min="0" value="0"><br>
 </div>
 
-<!-- Session expires message -->
+
 <div class="session-expire">
     <p>Your session will expire in 10 minutes.</p>
 </div>
@@ -137,7 +137,7 @@
 
 
     function updateRemainingSeats() {
-      var totalSeats = 261; // Total number of seats
+      var totalSeats = 261; 
       var numTicketsChild = parseInt(document.getElementById("num-tickets-child").value);
       var numTicketsAdult = parseInt(document.getElementById("num-tickets-adult").value);
       var numTicketsSenior = parseInt(document.getElementById("num-tickets-senior").value);
@@ -146,7 +146,7 @@
       var seatsSelected=totalTickets;
 
       document.getElementById("seats-remaining").textContent = seatsRemaining;
-      document.getElementById("seats-reducing").textContent = seatsSelected;
+      //document.getElementById("seats-reducing").textContent = seatsSelected;
 
       sessionStorage.setItem('selectedSeats', seatsReducing);    }
 

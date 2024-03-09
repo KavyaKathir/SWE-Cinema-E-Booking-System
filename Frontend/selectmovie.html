@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Description</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+.navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: -20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar p {
+            margin: 0;
+        }
+
+        .navbar-links {
+            display: flex;
+        }
+
+        .navbar-links a {
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-links a:last-child {
+            margin-right: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 10px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            align-items: start;
+        }
+
+        .movie-section {
+            width: 50%;
+        }
+.movie-poster {
+height:350px;
+width:540px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .trailer-container {
+            flex: 1;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .trailer-iframe {
+            width: 500px;
+            height: 350px;
+        }
+
+        .movie-detail {
+            width: 50%;
+            padding-left: 20px;
+        }
+
+        .movie-title {
+        margin-top: -200px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .movie-detail p {
+            margin-bottom: 10px;
+        }
+
+        .book-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .book-button:hover {
+            background-color: #0056b3;
+        }
+        .review-box {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 45px;
+        }
+        .review-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .review-author {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .review-rating {
+            margin-bottom: 5px;
+        }
+        .review-content {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <h1>MOVIELANE</h1>
+    <div class="navbar-right">
+        <form id="searchForm" onsubmit="searchMovie(); return false;">
+            <input type="text" id="searchInput" placeholder="Enter movie title...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="navbar-links">
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+
+    <!-- Movie Poster -->
+    <img class="movie-poster" src="/img/1.jpeg" alt="Movie Poster"><br><br>
+    <div class="trailer-container">
+        <iframe class="trailer-iframe" src="https://www.youtube.com/embed/UtjH6Sk7Gxs" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <!-- Movie Details -->
+    <div class="movie-detail">
+        <h1 class="movie-title">Anyone But You</h1>
+        <p><strong>Category:</strong> Comedy, Romance</p>
+        <p><strong>Cast:</strong> Sydney Sweeney, Glen Powell</p>
+        <p><strong>Director:</strong> Will Gluck</p>
+        <p><strong>Producer:</strong> Will Gluck, Joe Roth, Jeff Kirschenbaum</p>
+        <p><strong>Synopsis:</strong> After an amazing first date, Bea and Ben's fiery attraction turns ice-cold--until they find themselves unexpectedly reunited at a destination wedding in Australia. So they do what any two mature adults would do: pretend to be a couple.</p>
+
+        <p><strong>MPAA-US Rating Code:</strong> R</p>
+        <p><strong>Duration:</strong> 2 HR 25 MIN</p>
+
+        <!-- Book Tickets Button -->
+        <button class="book-button" onclick="bookTickets()">Book Tickets</button>
+    </div>
+    <div>
+    <p><strong>Reviews:</strong> </p>
+    <div class="review-box">
+        <div class="review-title">Fantastic Movie!</div>
+        <div class="review-author">- Nathan Lagel</div>
+        <div class="review-rating">
+            Rating: <span>5/5</span>
+        </div>
+        <div class="review-content">
+            This movie was absolutely amazing. Excellent direction! I highly recommend it to anyone looking for a great film!
+        </div>
+    </div>
+
+    <div class="review-box">
+        <div class="review-title">Good, ok</div>
+        <div class="review-author">- Wane Smith</div>
+        <div class="review-rating">
+            Rating: <span>3/5</span>
+        </div>
+        <div class="review-content">
+            I was really looking forward to this movie, but unfortunately, it didn't live up to most of the expectations.
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    function bookTickets() {
+        
+        alert("Book tickets option clicked!");
+    }
+</script>
+</body>
+</html>
