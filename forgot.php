@@ -89,7 +89,7 @@ $mail->SMTPSecure = "tls";
 $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587; 
 $mail->Username   =  'mharipriya819@gmail.com';                     //SMTP username
-$mail->Password   = 'etcq lypr pjpn ryik';   
+$mail->Password   = 'you have to generate app password from your account';   
 $mail->FromName = "MOVIELANE BOOKING";
 $mail->AddAddress($email);
 $mail->Subject = "Reset Password";
