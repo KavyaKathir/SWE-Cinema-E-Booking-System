@@ -1,6 +1,9 @@
 <?php
    require("./Movie.php");
-
+   session_start([
+    'cookie_lifetime' => 0, // Session cookie expires when the browser is closed
+    'gc_maxlifetime' => 3600 // Session garbage collection lifetime (optional)
+]);
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylenew.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,8 +61,38 @@
         .movie-title {
     color: blue; 
 }
-    </style>
-
+.error-message {
+            text-align: center;
+            font-size: 24px;
+            color: red;
+            margin-top: 20px; /* Adjust as needed */
+        }
+        .profile-icon {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .profile-dropdown:hover .dropdown-content {
+            display: block;
+        }
+</style>
 </head>
 <body>
 <div class="background-animation"></div>
@@ -69,21 +102,44 @@
         <div class="logo-container"><h1 class="logo">MOVIELANE </h1></div>
 
         <div>
-            <a href="./search.html" class="my-btn" >
+            <a href="./search.html" class="my-btn">
                 <i class="fa fa-search"></i> Search Movie by Title
             </a>
         </div>
 
         <div class="nav-buttons">
-            <button id="loginBtn">LOGIN</button>
-            <button id="registerBtn">REGISTER</button>
+        <?php
+        
+        if (isset($_SESSION['user_id'])) {
+            // If logged in, display the profile icon with dropdown menu
+            echo '<div class="profile-dropdown">';
+            echo '<button class="profile-icon"><i class="fas fa-user"></i></button>';
+            echo '<div class="dropdown-content">';
+            echo '<a href="/editProfile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>';
+            echo '<a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>';
+            echo '</div>';
+            echo '</div>';
+        } else {
+            // If not logged in, display the "LOGIN" and "REGISTER" buttons
+            echo '<a href="/loginn.php"><button id="loginBtn">LOGIN</button></a>';
+            echo '<a href="/creaAccount.html"><button id="registerBtn">REGISTER</button></a>';
+        }
+        ?>
+         
         </div>
-        <div class="toggle">
-            <i class="fa-solid fa-moon toggle-icon"></i>
-            <i class="fa-solid fa-sun toggle-icon"></i>
-            <div class="toggle-ball"></div>
-        </div>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+<script>
+    // JavaScript to close dropdown menu when clicking outside
+    document.addEventListener("click", function(event) {
+        var profileDropdown = document.querySelector(".profile-dropdown");
+        if (!profileDropdown.contains(event.target)) {
+            var dropdownContent = profileDropdown.querySelector(".dropdown-content");
+            dropdownContent.style.display = "none";
+        }
+    });
+</script>
+        
     </div>
 </div>
 <div class="container-fluid">

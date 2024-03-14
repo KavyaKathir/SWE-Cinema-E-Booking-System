@@ -197,32 +197,27 @@ h3 {
   }
 }
 
-/* Basic Button Styles */
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border: 2px solid #333;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    color: #333;
-  }
-  
-  /* Button Hover State */
-  button:hover {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  /* Button Active State */
-  button:active {
-    background-color: #666;
-    color: #fff;
-  }
+    /* Add CSS styles for the submit button */
+    #submitLogin {
+        background-color: #4CAF50; /* Green background */
+        border: none; /* No border */
+        color: white; /* White text */
+        padding: 10px 20px; /* Padding */
+        text-align: center; /* Center text */
+        text-decoration: none; /* No underline */
+        display: inline-block; /* Display as inline block */
+        font-size: 16px; /* Font size */
+        margin: 4px 2px; /* Margin */
+        cursor: pointer; /* Pointer cursor */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+    /* Change button color on hover */
+    #submitLogin:hover {
+        background-color: #45a049;
+    }
+
+
   
   #checkoutButton {
     background-color: #b013b0d6;

@@ -1,7 +1,7 @@
 oldPwdView = document.getElementById('oldPwdView');
 
 function toggleOldPwdView() {
-    var x = document.getElementById("oldPwd"); 
+    var x = document.getElementById("oldPwd");
     if (x.type === "password") {
       x.type = "text";
     } else {
@@ -15,7 +15,7 @@ oldPwdView.addEventListener('change', toggleOldPwdView);
 newPwdView = document.getElementById('newPwdView');
 
 function toggleNewPwdView() {
-    var x = document.getElementById("newPwd"); 
+    var x = document.getElementById("newPwd");
     if (x.type === "password") {
       x.type = "text";
     } else {
