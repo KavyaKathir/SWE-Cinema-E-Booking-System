@@ -30,13 +30,12 @@
       <input type="checkbox" id="promotions">Subscribe for Promotions <br/> <br/>
 
       <label for="createPwd"> Password: *</label>
-
-      <ul>
-        <li><input type="password" id="createPwd" required></li>
-        <li><input type="checkbox" id="pwdView1">Show Password </li>
-        <li><h5>Must contain at least 8 characters</h5></li> 
-      </ul>
-      <input type="checkbox" id="savePwd">Forget Password  <br/> <br/>
+      <div class="password-container">
+          <input type="password" id="createPwd" required>
+          <span>Must contain at least 8 characters</span><br/>
+          <input type="checkbox" id="pwdView1">Show Password
+          <input type="checkbox" id="savePwd">Forget Password <br/> <br/>
+      </div>
 
       <label for="phone">Phone Number: *</label>
       <input type="tel" id="phone" placeholder="123-456-7891" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
