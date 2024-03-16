@@ -59,6 +59,9 @@ function toggleCard1() {
       cardHolder1 = document.createElement('div');
       cardHolder1.id = 'cardHolder';
       cardHolder1.class = 'card';
+
+      credit1Label.style.marginRight = '50px'; // to give space between Credit and Debit
+      creditHolder1.appendChild(document.createElement('br')); // to give space 
   
       numLabel1 = document.createElement('label');
       numLabel1.textContent = 'Card Number: ';
@@ -131,7 +134,8 @@ function toggleCard1() {
       billAddState1.type = 'text';
       billAddState1.id = 'billAddState1';
       billAddState1.placeholder = 'Georgia';
-  
+
+      billAddDiv1.appendChild(document.createElement('br')); // to give space between MM/YY and Billing Address
       billAddDiv1.appendChild(billAddLabel1);
       billAddDiv1.appendChild(br);
       billAddDiv1.appendChild(billAddL1);
@@ -219,6 +223,9 @@ function toggleCard1() {
       cardHolder2 = document.createElement('div');
       cardHolder2.id = 'cardHolder';
       cardHolder2.class = 'card';
+
+      credit2Label.style.marginRight = '50px'; // to give space between Credit and Debit
+      creditHolder2.appendChild(document.createElement('br')); // to give space 
   
       numLabel2 = document.createElement('label');
       numLabel2.textContent = 'Card Number: ';
@@ -291,7 +298,9 @@ function toggleCard1() {
       billAddState2.type = 'text';
       billAddState2.id = 'billAddState2';
       billAddState2.placeholder = 'Georgia';
-  
+
+      billAddDiv2.appendChild(document.createElement('br')); // to give space between MM/YY and Billing Address
+      billAddDiv2.appendChild(billAddLabel2);
       billAddDiv2.appendChild(billAddLabel2);
       billAddDiv2.appendChild(br);
       billAddDiv2.appendChild(billAddL2);
@@ -379,6 +388,9 @@ function toggleCard1() {
       cardHolder3 = document.createElement('div');
       cardHolder3.id = 'cardHolder';
       cardHolder3.class = 'card';
+
+      credit3Label.style.marginRight = '50px'; // to give space between Credit and Debit
+      creditHolder3.appendChild(document.createElement('br')); // to give space 
   
       numLabel3 = document.createElement('label');
       numLabel3.textContent = 'Card Number: ';
@@ -451,7 +463,8 @@ function toggleCard1() {
       billAddState3.type = 'text';
       billAddState3.id = 'billAddState3';
       billAddState3.placeholder = 'Georgia';
-  
+
+      billAddDiv3.appendChild(document.createElement('br')); // to give space between MM/YY and Billing Address
       billAddDiv3.appendChild(billAddLabel3);
       billAddDiv3.appendChild(br);
       billAddDiv3.appendChild(billAddL3);
