@@ -4,6 +4,42 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </head>
 <style>
+  .navbar {
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            margin-bottom: 0;
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            height: 100%;
+            color: white;
+            font-family: 'Sen', sans-serif;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .logo {
+    font-style: 30px;
+    color: greenyellow;
+    cursor: default;
+    transition: 1s ease;
+    font-weight: bold;
+}
+
+        .logo img {
+            width: 150px;
+            height: 10px;
+            
+        }
  .box
  {
   width:100%;
@@ -66,7 +102,10 @@ if(isset($_REQUEST['pwdrst']))
   $cpwd = $_REQUEST['cpwd'];
   if($pwd == $cpwd)
   {
-    $reset_pwd = mysqli_query($connection,"update users set password='$pwd' where email='$email'");
+    $hashed_password = password_hash($pwd, PASSWORD_DEFAULT);
+    
+    $reset_pwd = mysqli_query($connection,"UPDATE users SET password='$hashed_password' WHERE email='$email'");
+    
     if($reset_pwd>0)
     {
       $msg = 'Your password updated successfully <a href="/loginn.php">Click here</a> to login';
@@ -90,6 +129,15 @@ if($_GET['secret'])
   if($res>0)
     { ?>
 <body>
+<div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <img src="/Frontend/img/lo.png" alt="Logo" style="width: 100px; height:45px;" class="logo">
+                <h1 class="logo">MOVIELANE</h1>
+            </div>
+            
+        </div>
+    </div>
 <div class="container">
     <div class="table-responsive">
     <h3 align="center">Reset Password</h3><br/>

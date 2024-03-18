@@ -11,26 +11,93 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
     <style>
+ .navbar {
+    background-color: black;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 45px;
+    margin-right: 10px;
+}
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav li {
+    margin: 0 10px; 
+}
+
+.nav li:first-child {
+    margin-left: 0; 
+}
+
+.nav li:last-child {
+    margin-right: 0;
+}
+
+.nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav li a:hover {
+    background-color: red;
+}
+        .h1{color:greenyellow;}
         .error-message {
             text-align: center;
             font-size: 24px;
             color: red;
-            margin-top: 20px; /* Adjust as needed */
+            margin-top: 20px; 
         }
         .forget-password-link {
             color: blue;
             text-decoration: underline;
             cursor: pointer;
         }
+        #submitLogin {
+        width: 630px; 
+        
+    }
     </style>
+   
 </head>
 <body>
-    <nav>
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="logo-container">
+            <img src="/Frontend/img/lo.png" alt="Logo" class="logo">
+            <h1 class="logo">MOVIELANE</h1>
+        </div>
         <ul class="nav">
             <li><a href="/Frontend/homepage.php">Home</a></li>
             <li><a href="/Frontend/search.html">Browse Movies</a></li>
-          </ul>
-    </nav>
+           
+        </ul>
+    </div>
+</nav>
+
     <form class="login" method="post" action="../login.php">
         <h1> Login </h1>
 
@@ -47,15 +114,15 @@
         <label for="forgotpassword"><a href="forgot.php">Forgot password?</a></label>
         
         <br/> <br/>
-        <input type="checkbox" id="remember" name="remember"> <!-- Remember Me checkbox --> <label for="remember">Remember Me</label> 
+        <input type="checkbox" id="remember" name="remember">  <label for="remember">Remember Me</label> 
 
         <input type="submit" id="submitLogin" name="login" value="Login">
         <?php
         
-        // Display error message if exists
+        
         if (isset($_SESSION['error'])) {
             echo '<div class="error-message">' . $_SESSION['error'] . '</div>';
-            unset($_SESSION['error']); // Clear the error message after displaying it
+            unset($_SESSION['error']);
         }
         ?>
        

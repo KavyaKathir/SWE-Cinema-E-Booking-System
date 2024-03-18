@@ -38,7 +38,7 @@ try {
     $querymovie = "SELECT * FROM movies";
     $mstates = $db->prepare($querymovie);
     $mstates->execute();
-    $movieInfs = $mstates->fetchAll(PDO::FETCH_ASSOC); // Fetch movies as associative array
+    $movieInfs = $mstates->fetchAll(PDO::FETCH_ASSOC); 
     $movieOnCheck = $mstates->rowCount();
     $mstates->closeCursor();
 

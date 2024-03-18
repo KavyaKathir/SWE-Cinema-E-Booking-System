@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +88,18 @@
         <p>Please click below to log in again or return to homepage.</p>
         
         <button onclick="window.location.href = '/loginn.php';">Login</button>
-        <button onclick="window.location.href = './homepage.php';">Home</button>
+                
+        <?php
+        if (isset($_SESSION['userType']) && $_SESSION['userType'] == 2) {
+            echo '<button onclick="window.location.href = \'./admin/managemovies.php\';">Home</button>';
+        } else {
+
+            echo '<button onclick="window.location.href = \'./homepage.php\';">Home</button>';
+        }
+    ?>
+    
+        
+    
         
     </div>
 </body>

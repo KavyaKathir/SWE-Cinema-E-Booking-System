@@ -1,8 +1,8 @@
 <?php
    require("./Movie.php");
    session_start([
-    'cookie_lifetime' => 0, // Session cookie expires when the browser is closed
-    'gc_maxlifetime' => 3600 // Session garbage collection lifetime (optional)
+    'cookie_lifetime' => 0, 
+    'gc_maxlifetime' => 3600
 ]);
 
 ?>
@@ -65,7 +65,7 @@
             text-align: center;
             font-size: 24px;
             color: red;
-            margin-top: 20px; /* Adjust as needed */
+            margin-top: 20px; 
         }
         .profile-icon {
             background-color: transparent;
@@ -99,6 +99,7 @@
 
 <div class="navbar">
     <div class="navbar-container">
+        <img src="./img/lo.png" style="width:150px; height:40px;">
         <div class="logo-container"><h1 class="logo">MOVIELANE </h1></div>
 
         <div>

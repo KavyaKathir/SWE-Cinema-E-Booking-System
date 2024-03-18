@@ -5,6 +5,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
 </head>
 <style>
+  .nav {
+    display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: black; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+       
+      
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background-color:red; 
+}
+.nav img {
+            height: 45px;
+            width: 350px;
+            margin-right: 10px; 
+            border: none !important;
+        }
+
  .box
  {
   width:100%;
@@ -89,7 +120,7 @@ $mail->SMTPSecure = "tls";
 $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587; 
 $mail->Username   =  'mharipriya819@gmail.com';                     //SMTP username
-$mail->Password   = 'you have to generate app password from your account';   
+$mail->Password   = 'etcq lypr pjpn ryik';   
 $mail->FromName = "MOVIELANE BOOKING";
 $mail->AddAddress($email);
 $mail->Subject = "Reset Password";
@@ -109,6 +140,16 @@ else
 
 ?>
 <body>
+<nav>
+        
+        <ul class="nav">
+            <li><a href="/Frontend/homepage.php"><img src="/Frontend/img/ml.png" alt="Movie Lane Logo"></a></li>
+            <li id="Home" ><a href="/Frontend/homepage.php"> Home</a></li>
+            <li id="login" name ="login"><a href="loginn.php">Login</a></li>
+        </ul>
+        
+    </nav>
+
 <div class="container">  
     <div class="table-responsive">  
     <h3 align="center">Forgot Password</h3><br/>

@@ -1,3 +1,10 @@
+<?php
+   
+   session_start([
+    'cookie_lifetime' => 0, 
+    'gc_maxlifetime' => 3600 
+]);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +14,22 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Manage Movies</title>
     <style>
+.movielane {
+    color: red; 
+}
 
+.navbar-nav {
+    margin-left: auto; 
+}
+
+.nav-item {
+    margin-right: 15px; 
+}
+
+h2 {
+            text-align: center; 
+            color: red;
+        }
         body {
 
             background-color: cornsilk ;
@@ -17,14 +39,14 @@
             margin: 0 auto;
             color: black;
         }
-        h1 {
+        .h1 {
             text-align: center;
             margin-top: 50px;
-            color: red;
+            color: greenyellow;
         }
         .middle-content {
             margin-top: 50px;
-            display: none; /* Initially hiding the section */
+            display: none;
         }
         .middle-content input[type="button"] {
             margin: 10px;
@@ -32,17 +54,7 @@
         .middle-content:first-child {
             color:red;
         }
-        .container {
-            width: 800px;
-            background-color: rgba(255, 255, 255, 0.3);
-            border: 1px solid black;
-            border-radius: 3px;
-            padding: 10px;
-            margin: 0 auto;
-            margin-top: 20px;
-            margin-bottom: 50px;
-            color:red;
-        }
+       
         .bottom-content {
             margin-top: 20px;
             text-align: center;
@@ -64,7 +76,7 @@
             text-align: center;
             font-size: 24px;
             color: red;
-            margin-top: 20px; /* Adjust as needed */
+            margin-top: 20px; 
         }
         .profile-icon {
             background-color: transparent;
@@ -91,47 +103,49 @@
         .profile-dropdown:hover .dropdown-content {
             display: block;
         }
+        
     </style>
 </head>
 
 <body>
 
-<!--- Navigation Menu --->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="color:yellow;">
-    <a class="navbar-brand">MOVIELANE</a>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarMenu">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="color: yellow;">
+    
+        <a class="navbar-brand movielane" href="#">
+            <img src="/Frontend/img/lo.png" alt="Logo" style="width: 100px; height: 45px;" class="logo">
+            <a style="color: greenyellow;">MOVIELANE</a>
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" onclick="showManageUsers()">MANAGE USERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="showManageMovies()">MANAGE MOVIES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="showManagePromotions()">MANAGE PROMOTIONS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="showManagePrices()">MANAGE PRICES</a>
+                </li>
+            </ul>
+        
+    
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" style = "margin-left: 35px" onclick="showManageMovies()"> MANAGE USERS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="showManageMovies()">MANAGE MOVIES</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="showManageMovies()">MANAGE PROMOTIONS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" onclick="showManageMovies()">MANAGE PRICES</a>
-            </li>
-        </ul>
-        <div class="nav-buttons">
+
             <?php
             
+           
             if (isset($_SESSION['user_id'])) {
-                // If logged in, display the profile icon with dropdown menu
-                echo '<div class="profile-dropdown">';
-                echo '<button class="profile-icon"><i class="fas fa-user"></i></button>';
-                echo '<div class="dropdown-content">';
-                echo '<a href="/editProfile.html"><i class="fas fa-user-edit"></i> Edit Profile</a>';
-                echo '<a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>';
-                echo '</div>';
-                echo '</div>';
+               
+                echo '<a href="/editProfile.html"><button id="editProfBtn">Edit Profile</button></a>';
+                echo '<a href="logout.php"><button id="logoutBtn">Logout</button></a>';
             } else {
-                // If not logged in, display the "LOGIN" and "REGISTER" buttons
+                
                 echo '<a href="/loginn.php"><button id="loginBtn">LOGIN</button></a>';
                 echo '<a href="/creaAccount.html"><button id="registerBtn">REGISTER</button></a>';
             }
@@ -140,7 +154,9 @@
             </div>
     </div>
 </nav>
-<h2> WELCOME, ADMIN!</h2><br>
+<br/>
+<br/>
+<h2 style:"justify:center"> WELCOME, ADMIN!</h2><br>
 
 </body>
 </html>

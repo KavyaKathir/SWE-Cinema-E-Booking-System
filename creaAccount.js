@@ -1,28 +1,28 @@
-
 pwdView1 = document.getElementById('pwdView1');
 
 function togglePwdView1() {
     var x = document.getElementById("createPwd");
     if (x.type === "password") {
-      x.type = "text";
+        x.type = "text";
     } else {
-      x.type = "password";
+        x.type = "password";
     }
-  }
+}
 
 pwdView1.addEventListener('change', togglePwdView1);
-
-
-
+function moveSubmitButtonToBottom() {
+    const form = document.getElementById('creAcc');
+    const submitButton = document.getElementById('submit');
+    if (form.contains(submitButton)) {
+        form.appendChild(submitButton);
+    }
+}
 card1 = document.getElementById('card1');
 
-/* Create Credit Cards */
 function toggleCard1() {
-    form = document.getElementById('creAcc');
-    card1 = document.getElementById('card1');
-  
+    const form = document.getElementById('creAcc');
     if (card1.checked) {
-  
+
       br = document.createElement('br');
       br2 = document.createElement('br');
   
@@ -169,23 +169,20 @@ function toggleCard1() {
       cardHolder1.appendChild(expiration1);
       cardHolder1.appendChild(billAddDiv1);
       cardHolder1.appendChild(card2Div);
-      form.appendChild(cardHolder1);
   
-  
+        form.appendChild(cardHolder1);
+        moveSubmitButtonToBottom();
     } else {
-      form.removeChild(cardHolder1);
-      form.removeChild(cardHolder2);
-      form.removeChild(cardHolder3);
+        form.removeChild(cardHolder1);
+        form.removeChild(cardHolder2);
+        form.removeChild(cardHolder3);
+        moveSubmitButtonToBottom();
     }
-  }
-  
-  
-  function toggleCard2() {
-    form = document.getElementById('creAcc');
-    card2 = document.getElementById('card2');
-  
+}
+
+function toggleCard2() {
+    const form = document.getElementById('creAcc');
     if (card2.checked) {
-  
       credit2 = document.createElement('input');
       credit2.type = 'radio';
       credit2.value = 'credit';
@@ -330,22 +327,19 @@ function toggleCard1() {
       cardHolder2.appendChild(expiration2);
       cardHolder2.appendChild(billAddDiv2);
       cardHolder2.appendChild(card3Div);
-      form.appendChild(cardHolder2);
-  
-  
+        form.appendChild(cardHolder2);
+        moveSubmitButtonToBottom();
     } else {
-      form.removeChild(cardHolder2);
-      form.removeChild(cardHolder3);
+        form.removeChild(cardHolder2);
+        form.removeChild(cardHolder3);
+        moveSubmitButtonToBottom();
     }
-  }
-  
-  
-  function toggleCard3() {
-    form = document.getElementById('creAcc');
-    card3 = document.getElementById('card3');
-  
+}
+
+function toggleCard3() {
+    const form = document.getElementById('creAcc');
     if (card3.checked) {
-  
+
       credit3 = document.createElement('input');
       credit3.type = 'radio';
       credit3.value = 'credit';
@@ -471,13 +465,15 @@ function toggleCard1() {
       cardHolder3.appendChild(expLabel3);
       cardHolder3.appendChild(expiration3);
       cardHolder3.appendChild(billAddDiv3);
-      form.appendChild(cardHolder3);
   
-  
+        form.appendChild(cardHolder3);
+        moveSubmitButtonToBottom();
     } else {
-      form.removeChild(cardHolder3);
+        form.removeChild(cardHolder3);
+        moveSubmitButtonToBottom();
     }
-  }
-  
-  card1.addEventListener('change', toggleCard1);
+}
 
+card1.addEventListener('change', toggleCard1);
+card2.addEventListener('change', toggleCard2);
+card3.addEventListener('change', toggleCard3);
